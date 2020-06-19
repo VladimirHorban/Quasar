@@ -1,0 +1,15 @@
+E:/VSProjects/Quasar/out/build/x64-Debug (default)/CMakeFiles/edit_cache.dir
+E:/VSProjects/Quasar/out/build/x64-Debug (default)/CMakeFiles/Quasar.dir
+E:/VSProjects/Quasar/out/build/x64-Debug (default)/CMakeFiles/rebuild_cache.dir
+E:/VSProjects/Quasar/out/build/x64-Debug (default)/GraphicCore/CMakeFiles/edit_cache.dir
+E:/VSProjects/Quasar/out/build/x64-Debug (default)/GraphicCore/CMakeFiles/rebuild_cache.dir
+E:/VSProjects/Quasar/out/build/x64-Debug (default)/GraphicCore/VulkanCore/CMakeFiles/rebuild_cache.dir
+E:/VSProjects/Quasar/out/build/x64-Debug (default)/GraphicCore/VulkanCore/CMakeFiles/VulkanCore.dir
+E:/VSProjects/Quasar/out/build/x64-Debug (default)/GraphicCore/VulkanCore/CMakeFiles/edit_cache.dir
+E:/VSProjects/Quasar/out/build/x64-Debug (default)/GraphicCore/ThirdParty/CMakeFiles/edit_cache.dir
+E:/VSProjects/Quasar/out/build/x64-Debug (default)/GraphicCore/ThirdParty/CMakeFiles/rebuild_cache.dir
+E:/VSProjects/Quasar/out/build/x64-Debug (default)/GraphicCore/SPIRV-Tools/CMakeFiles/SPIRV-TOOLS.dir
+E:/VSProjects/Quasar/out/build/x64-Debug (default)/GraphicCore/SPIRV-Tools/CMakeFiles/edit_cache.dir
+E:/VSProjects/Quasar/out/build/x64-Debug (default)/GraphicCore/SPIRV-Tools/CMakeFiles/rebuild_cache.dir
+E:/VSProjects/Quasar/out/build/x64-Debug (default)/Example/CMakeFiles/edit_cache.dir
+E:/VSProjects/Quasar/out/build/x64-Debug (default)/Example/CMakeFiles/rebuild_cache.dir
