@@ -7,11 +7,14 @@ project ("Quasar")
 
 add_subdirectory(GraphicCore)
 
-# Optional (only for show)
-add_subdirectory(Example)
+add_subdirectory(API)
+
+set(HEADERS API/Headers/CoreMinimal.h)
+set(SOURCES API/Sources/CoreMinimal.cpp)
 
 # Add source to this project's executable.
-add_executable (Quasar "Quasar.cpp" "Quasar.h" )
+#add_executable (Quasar "Quasar.cpp" "Quasar.h" ${HEADERS} ${SOURCES})
+add_library(Quasar STATIC ${HEADERS} ${SOURCES})
 
 target_link_libraries(Quasar VulkanCore)
 

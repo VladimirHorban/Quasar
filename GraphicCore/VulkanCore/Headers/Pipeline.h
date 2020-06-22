@@ -17,8 +17,11 @@ private:
 
 	VkPipeline       mGraphicsPipeline;
 
+	const char* mVertexShader   = nullptr;
+	const char* mFragmentShader = nullptr;
+
 public:
-	GraphicPipeline(VkDevice* aDevice, VkExtent2D* aSwapChainExtent, VkFormat* aSwapChainFormat);
+	GraphicPipeline(VkDevice* aDevice, VkExtent2D* aSwapChainExtent, VkFormat* aSwapChainFormat, const char* aVertexShader, const char* aFragmentShader);
 	~GraphicPipeline() {}
 
 	inline VkPipeline* const getGraphicPipeline()

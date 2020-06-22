@@ -1,6 +1,6 @@
 #include "../Headers/Pipeline.h"
 
-GraphicPipeline::GraphicPipeline(VkDevice* aDevice,VkExtent2D* aSwapChainExtent,VkFormat* aSwapChainFormat) : mDevice(aDevice), mSwapChainExtent(aSwapChainExtent), mSwapChainFormat(aSwapChainFormat)
+GraphicPipeline::GraphicPipeline(VkDevice* aDevice,VkExtent2D* aSwapChainExtent,VkFormat* aSwapChainFormat, const char* aVertexShader, const char* aFragmentShader) : mDevice(aDevice), mSwapChainExtent(aSwapChainExtent), mSwapChainFormat(aSwapChainFormat), mVertexShader(aVertexShader), mFragmentShader(aFragmentShader)
 {
 	createRenderPass();
 	createGraphicsPipeline();
@@ -50,8 +50,8 @@ void GraphicPipeline::createRenderPass()
 
 void GraphicPipeline::createGraphicsPipeline()
 {   
-	auto vertShaderModule = createShaderModule(*mDevice, "E:/VSProjects/Quasar/Example/Assets/Shaders/vert.spv");
-	auto fragShaderModule = createShaderModule(*mDevice, "E:/VSProjects/Quasar/Example/Assets/Shaders/frag.spv");	
+	auto vertShaderModule = createShaderModule(*mDevice, mVertexShader);
+	auto fragShaderModule = createShaderModule(*mDevice, mFragmentShader);
 
 	VkPipelineShaderStageCreateInfo vertShaderStageInfo{};
 	vertShaderStageInfo.sType  = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO;

@@ -3,7 +3,6 @@
 
 #include <Windows.h>
 #include "CommonHeaders.h"
-#include "../../ThirdParty/vulkan/vulkan_win32.h"
 
 class Window
 {
@@ -13,12 +12,23 @@ private:
 	int         mWidth      = 0;
 	int         mHeight     = 0;
 
+	HWND        mPHwnd;
+	HINSTANCE   mCurrentInstance;
+
 public:
-	Window(const char* aWindowName, int aWidth, int aHeight);
+	Window(HINSTANCE aCurrentInstance, const char* aWindowName, int aWidth, int aHeight);
 	~Window();
+
+	void run();
+
+	inline HWND const getPHWND() const
+	{
+		return mPHwnd;
+	}
 
 private:
 	void initWindow();	
 };
 
+LRESULT CALLBACK WindowProcessMessages(HWND hwnd, UINT msg, WPARAM param, LPARAM lparam);
 #endif // !WINDOW_H
