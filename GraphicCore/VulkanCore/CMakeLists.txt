@@ -15,7 +15,7 @@ set(HEADERS Headers/Instance.h
 			Headers/FrameBuffer.h
 			Headers/CommandBuffer.h
 			Headers/Synchronization.h
-			Headers/Core.h
+			Headers/Core.h			
 			)
 
 set(SOURCES Sources/Instance.cpp
@@ -29,7 +29,7 @@ set(SOURCES Sources/Instance.cpp
 			Sources/FrameBuffer.cpp
 			Sources/CommandBuffer.cpp
 			Sources/Synchronization.cpp
-			Sources/Core.cpp
+			Sources/Core.cpp		
 			)
 
 project(${PROJECT_NAME} CXX)

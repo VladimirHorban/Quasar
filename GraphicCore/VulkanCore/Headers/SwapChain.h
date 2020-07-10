@@ -33,7 +33,7 @@ public:
 	SwapChain(const VkDevice& aDevice, const VkPhysicalDevice& aPhysicalDevice, const VkSurfaceKHR& aSurface, const QueueFamilyIndices* aQueueFamilyIndices);
 	~SwapChain() {}
 
-	static SwapChainSupportDetails querySwapChainSupport(const VkPhysicalDevice& aPhysicalDevice, const VkSurfaceKHR& aSurface);
+	static SwapChainSupportDetails querySwapChainSupport(const VkPhysicalDevice& aPhysicalDevice, const VkSurfaceKHR& aSurface);	
 
 	inline VkSwapchainKHR const getSwapChain() const
 	{

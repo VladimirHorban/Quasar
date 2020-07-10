@@ -34,6 +34,11 @@ public:
 		return &mRenderPass;
 	}
 
+	inline VkPipelineLayout const getVkPipelineLayout() const
+	{
+		return mPipelineLayout;
+	}
+
 private:
 	void createRenderPass();
 	void createGraphicsPipeline();

@@ -1,7 +1,7 @@
 #include "../Headers/Window.h"
 
 Window::Window(HINSTANCE aCurrentInstance, const char* aWindowName, int aWidth, int aHeight) : mCurrentInstance(aCurrentInstance), mWindowName(aWindowName), mWidth(aWidth), mHeight(aHeight)
-{
+{    
     initWindow();
 }
 
@@ -27,7 +27,7 @@ void Window::initWindow()
             WS_OVERLAPPEDWINDOW | WS_VISIBLE,			// Window style
             CW_USEDEFAULT, CW_USEDEFAULT,				// Window initial position
             mWidth, mHeight,			            	// Window size
-            nullptr, nullptr, nullptr, nullptr);
+            nullptr, nullptr, nullptr, nullptr);    
 }
 
 LRESULT CALLBACK WindowProcessMessages(HWND hwnd, UINT msg, WPARAM param, LPARAM lparam)
@@ -37,9 +37,20 @@ LRESULT CALLBACK WindowProcessMessages(HWND hwnd, UINT msg, WPARAM param, LPARAM
     case WM_DESTROY:
         PostQuitMessage(0);
         return 0;
+
+    case WM_ENTERSIZEMOVE:
+        std::cout << "Moving or resizing" << std::endl;
+
+    case WM_EXITSIZEMOVE:
+        {
+            VulkanCore& mCore = VulkanCore::getVulkanCoreInstance();
+            mCore.recreateSwapChain();
+        }        
+
     default:
         return DefWindowProc(hwnd, msg, param, lparam);
     }
+    
 }
 
 void Window::run() 
@@ -50,4 +61,11 @@ void Window::run()
         TranslateMessage(&msg);
         DispatchMessage(&msg);
     }
+}
+
+LPRECT Window::getWindowRect() 
+{
+    LPRECT aLPRECT{};
+    GetWindowRect(mPHwnd, aLPRECT);
+    return aLPRECT;
 }

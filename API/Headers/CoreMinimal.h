@@ -6,11 +6,11 @@
 class CoreMinimal
 {
 private:
-	VulkanCore* mVulkanCore = nullptr;	
+	VulkanCore& mVulkanCore = VulkanCore::getVulkanCoreInstance();	
 
 public:
 	CoreMinimal(const char* aAppName, int aWidth, int aHeight, HINSTANCE aCurrentInstance, const char* mVertexShader, const char* mFragmentShader);
-	~CoreMinimal();
+	~CoreMinimal() {}
 
 	void run();	
 };

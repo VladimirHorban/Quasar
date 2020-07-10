@@ -24,6 +24,11 @@ public:
 		return mCommandBuffers;
 	}
 
+	inline VkCommandPool getCommandPool() const
+	{
+		return mCommandPool;
+	}
+
 private:
 	void createCommandPool(const QueueFamilyIndices* aFamilyIndices);
 	void createCommandBuffers(const VkPipeline* aGraphicPipeline, const VkRenderPass* aRenderPass, const Framebuffer* aFramebuffer,const VkExtent2D* aExtent2D);
